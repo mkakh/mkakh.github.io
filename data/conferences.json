@@ -1,0 +1,1109 @@
+[
+  {
+    "acronym": "ASE",
+    "title": "Automated Software Engineering Conference",
+    "rank": "A*",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/ase"
+  },
+  {
+    "acronym": "ASPLOS",
+    "title": "Architectural Support for Programming Languages and Operating Systems",
+    "rank": "A*",
+    "rating": "N/A",
+    "deadline": "2026-09-09",
+    "fullDeadline": "2026-09-09",
+    "url": "https://www.asplos-conference.org/asplos2027/cfp/"
+  },
+  {
+    "acronym": "CAV",
+    "title": "Computer Aided Verification",
+    "rank": "A*",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://conferences.i-cav.org/2026/cfp/"
+  },
+  {
+    "acronym": "FSE",
+    "title": "ACM International Conference on the Foundations of Software Engineering",
+    "rank": "A*",
+    "rating": "5.0",
+    "deadline": "2026-10-02",
+    "fullDeadline": "2026-10-02",
+    "url": "https://conf.researchr.org/track/fse-2027/fse-2027-papers"
+  },
+  {
+    "acronym": "ICSE",
+    "title": "International Conference on Software Engineering",
+    "rank": "A*",
+    "rating": "4.7",
+    "deadline": "2026-06-23",
+    "fullDeadline": "2026-06-30",
+    "url": "https://conf.researchr.org/track/icse-2027/icse-2027-research-track"
+  },
+  {
+    "acronym": "ISCA",
+    "title": "ACM International Symposium on Computer Architecture",
+    "rank": "A*",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://iscaconf.org/isca2026/submit/callforpapers.php"
+  },
+  {
+    "acronym": "PLDI",
+    "title": "ACM-SIGPLAN Conference on Programming Language Design and Implementation",
+    "rank": "A*",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/pldi-2027"
+  },
+  {
+    "acronym": "POPL",
+    "title": "ACM-SIGACT Symposium on Principles of Programming Languages",
+    "rank": "A*",
+    "rating": "N/A",
+    "deadline": "2026-07-09",
+    "fullDeadline": "2026-07-09",
+    "url": "https://popl27.sigplan.org/track/POPL-2027-popl-research-papers"
+  },
+  {
+    "acronym": "SIGMETRICS",
+    "title": "Measurement and Modeling of Computer Systems",
+    "rank": "A*",
+    "rating": "5.0",
+    "deadline": "2026-07-03",
+    "fullDeadline": "2026-07-10",
+    "url": "https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html"
+  },
+  {
+    "acronym": "DATE",
+    "title": "Design, Automation and Test in Europe Conference",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "2026-09-13",
+    "fullDeadline": "2026-09-20",
+    "url": "https://www.date-conference.com/date-2027-call-papers"
+  },
+  {
+    "acronym": "BPM",
+    "title": "International Conference in Business Process Management",
+    "rank": "A",
+    "rating": "4.8",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.yorku.ca/events/bpm2026/calls/call-for-research-papers/"
+  },
+  {
+    "acronym": "CGO",
+    "title": "International Symposium on Code Generation and Optimization",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "2026-09-10",
+    "fullDeadline": "2026-09-10",
+    "url": "https://conf.researchr.org/track/cgo-2027/cgo-2027-papers"
+  },
+  {
+    "acronym": "EASE",
+    "title": "International Conference on Evaluation and Assessment in Software Engineering",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/ease"
+  },
+  {
+    "acronym": "ECOOP",
+    "title": "European Conference on Object-Oriented Programming",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.ecoop.org/track/ecoop-2026-technical-papers"
+  },
+  {
+    "acronym": "ESOP",
+    "title": "European Symposium on Programming",
+    "rank": "A",
+    "rating": "4.0",
+    "deadline": "2026-10-15",
+    "fullDeadline": "2026-10-15",
+    "url": "https://etaps.org/2027/cfp/"
+  },
+  {
+    "acronym": "ICFP",
+    "title": "International Conference on Functional Programming",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icfp26.sigplan.org/dates"
+  },
+  {
+    "acronym": "ICPC",
+    "title": "IEEE International Conference on Program Comprehension",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/icpc-2026/icpc-2026-research"
+  },
+  {
+    "acronym": "ICSA",
+    "title": "International Conference on Software Architecture",
+    "rank": "A",
+    "rating": "4.9",
+    "deadline": "2026-10-30",
+    "fullDeadline": "2026-11-04",
+    "url": "https://conf.researchr.org/home/icsa-2027"
+  },
+  {
+    "acronym": "ICSME",
+    "title": "IEEE International Conference on Software Maintenance and Evolution",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers"
+  },
+  {
+    "acronym": "ICST",
+    "title": "International Conference on Software Testing, Verification and Validation",
+    "rank": "A",
+    "rating": "4.8",
+    "deadline": "2026-11-02",
+    "fullDeadline": "2026-11-02",
+    "url": "https://conf.researchr.org/track/icst-2027/icst-2027-research-papers"
+  },
+  {
+    "acronym": "IJCAR",
+    "title": "International Joint Conference on Automated Reasoning",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.floc26.org/ijcar"
+  },
+  {
+    "acronym": "ISSTA",
+    "title": "International Symposium on Software Testing and Analysis",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/dates/issta-2026"
+  },
+  {
+    "acronym": "MODELS",
+    "title": "International Conference on Model Driven Engineering Languages and Systems",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/models-2026"
+  },
+  {
+    "acronym": "MSR",
+    "title": "IEEE International Working Conference on Mining Software Repositories",
+    "rank": "A",
+    "rating": "4.7",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/dates/msr-2026"
+  },
+  {
+    "acronym": "OOPSLA",
+    "title": "ACM Conference on Object Oriented Programming Systems Languages and Applications",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.splashcon.org/track/oopsla-2026"
+  },
+  {
+    "acronym": "RE",
+    "title": "IEEE International Requirements Engineering Conference",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/RE-2026/RE-2026-Research-Papers"
+  },
+  {
+    "acronym": "SANER",
+    "title": "IEEE International Conference on Software Analysis, Evolution and Reengineering",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "2026-09-21",
+    "fullDeadline": "2026-09-25",
+    "url": "https://conf.researchr.org/track/saner-2027/saner-2027-papers"
+  },
+  {
+    "acronym": "SEAMS",
+    "title": "International Symposium on Software Engineering for Adaptive and Self-Managing Systems",
+    "rank": "A",
+    "rating": "2.0",
+    "deadline": "2026-10-21",
+    "fullDeadline": "2026-10-21",
+    "url": "https://conf.researchr.org/track/seams-2027/seams-2027-research-track"
+  },
+  {
+    "acronym": "TACAS",
+    "title": "Tools and Algorithms for Construction and Analysis of Systems",
+    "rank": "A",
+    "rating": "5.0",
+    "deadline": "2026-10-15",
+    "fullDeadline": "2026-10-15",
+    "url": "https://etaps.org/2027/cfp/"
+  },
+  {
+    "acronym": "ECSA",
+    "title": "European Conference on Software Architecture",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/dates/ecsa-2026"
+  },
+  {
+    "acronym": "ICLP",
+    "title": "International Conference on Logic Programming",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://logicprogramming.org/2026/01/call-for-papers-iclp-2026/"
+  },
+  {
+    "acronym": "FOSSACS",
+    "title": "Foundations of Software Science and Computational Structures",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-10-15",
+    "fullDeadline": "2026-10-15",
+    "url": "https://etaps.org/2027/cfp/"
+  },
+  {
+    "acronym": "CAIN",
+    "title": "International Conference on AI Engineering - Software Engineering for AI",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/cain"
+  },
+  {
+    "acronym": "ISPASS",
+    "title": "IEEE International Symposium on Performance Analysis of Systems and Software",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://ispass.org/ispass2026/submission.php"
+  },
+  {
+    "acronym": "FM",
+    "title": "International Symposium on Formal Methods",
+    "rank": "B",
+    "rating": "4.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.fmeurope.org/symposia/"
+  },
+  {
+    "acronym": "XP",
+    "title": "Conference on Agile Software Development",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/xp"
+  },
+  {
+    "acronym": "CPP",
+    "title": "Certified Programs and Proofs",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-09-03",
+    "fullDeadline": "2026-09-10",
+    "url": "https://popl27.sigplan.org/home/CPP-2027"
+  },
+  {
+    "acronym": "CHASE",
+    "title": "International Conference on Cooperative and Human Aspects of Software Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "2026-10-23",
+    "url": "https://conf.researchr.org/home/chase-2027"
+  },
+  {
+    "acronym": "ATVA",
+    "title": "International Symposium on Automated Technology for Verification and Analysis",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/dates/aplas-atva-2026"
+  },
+  {
+    "acronym": "e-Science",
+    "title": "IEEE International Conference on e-Science and Grid Computing",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.escience-conference.org/2026/call-for-papers"
+  },
+  {
+    "acronym": "ECMFA",
+    "title": "European Conference on Modelling Foundations and Applications",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/ecmfa-2026/ecmfa-2026"
+  },
+  {
+    "acronym": "ENASE",
+    "title": "International Conference on Evaluation of Novel Approaches to Software Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-11-17",
+    "fullDeadline": "2026-11-17",
+    "url": "https://enase.scitevents.org/CallForPapers.aspx"
+  },
+  {
+    "acronym": "EuroSPI",
+    "title": "European SPI",
+    "rank": "B",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conference.eurospi.net/index.php/en/submission"
+  },
+  {
+    "acronym": "FASE",
+    "title": "Fundamental Approaches to Software Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-10-15",
+    "fullDeadline": "2026-10-15",
+    "url": "https://etaps.org/2027/cfp/"
+  },
+  {
+    "acronym": "FMCAD",
+    "title": "Formal Methods in Computer-Aided Design",
+    "rank": "B",
+    "rating": "4.5",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://fmcad.org/FMCAD26/important_dates/"
+  },
+  {
+    "acronym": "GPCE",
+    "title": "International Conference on Generative Programming and Component Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.ecoop.org/home/gpce-2026"
+  },
+  {
+    "acronym": "ICECCS",
+    "title": "IEEE International Conference on Engineering of Complex Computer Systems",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-06-29",
+    "fullDeadline": "2026-07-06",
+    "url": "https://formal-analysis.com/iceccs/2026/"
+  },
+  {
+    "acronym": "ICPE",
+    "title": "ACM/SPEC International Conference on Performance Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icpe.spec.org/"
+  },
+  {
+    "acronym": "ICSR",
+    "title": "International Conference on Software Reuse",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/variability-2026"
+  },
+  {
+    "acronym": "ICSSP",
+    "title": "International Conference on Software and System Processes",
+    "rank": "B",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conference.eurospi.net/index.php/en/submission"
+  },
+  {
+    "acronym": "NetSoft",
+    "title": "International Conference on Network Softwarization",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://netsoft2026.ieee-netsoft.org/"
+  },
+  {
+    "acronym": "PROFES",
+    "title": "Product Focused Software Process Improvement",
+    "rank": "B",
+    "rating": "4.2",
+    "deadline": "2026-07-23",
+    "fullDeadline": "2026-07-23",
+    "url": "https://conf.researchr.org/track/profes-2026/profes-2026-Research-Papers"
+  },
+  {
+    "acronym": "REFSQ",
+    "title": "International Workshop on Requirements Engineering: Foundation for Software Quality",
+    "rank": "B",
+    "rating": "4.0",
+    "deadline": "2026-11-05",
+    "fullDeadline": "2026-11-12",
+    "url": "https://2027.refsq.org/track/refsq-2027-research-papers"
+  },
+  {
+    "acronym": "RV",
+    "title": "International Conference on Runtime Verification",
+    "rank": "B",
+    "rating": "4.2",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://rv2026.smithengineering.queensu.ca/"
+  },
+  {
+    "acronym": "SAS",
+    "title": "Static Analysis Symposium",
+    "rank": "B",
+    "rating": "4.8",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/splash-issta-2026/sas-2026"
+  },
+  {
+    "acronym": "SEAA",
+    "title": "Euromicro Conference on Software Engineering and Advanced Applications",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://dsd-seaa.com/seaa2026/"
+  },
+  {
+    "acronym": "SEFM",
+    "title": "International Conference on Software Engineering and Formal Methods",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2026-06-16",
+    "fullDeadline": "2026-06-23",
+    "url": "https://sefm-conference.github.io/2026/"
+  },
+  {
+    "acronym": "SLE",
+    "title": "International Conference on Software Language Engineering",
+    "rank": "B",
+    "rating": "4.8",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/sle-2026"
+  },
+  {
+    "acronym": "SPLC",
+    "title": "Software Product Lines Conference",
+    "rank": "B",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/dates/variability-2026"
+  },
+  {
+    "acronym": "SSBSE",
+    "title": "International Symposium on Search Based Software Engineering",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/ssbse-2026/ssbse-2026-research-papers"
+  },
+  {
+    "acronym": "TechDebt",
+    "title": "International Conference on Technical Debt",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/TechDebt-2026"
+  },
+  {
+    "acronym": "VMCAI",
+    "title": "Verification, Model Checking and Abstract Interpretation",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/VMCAI-2026"
+  },
+  {
+    "acronym": "FedCSIS",
+    "title": "Conference on Computer Science and Intelligence Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.fedcsis.org/important_dates"
+  },
+  {
+    "acronym": "SCAM",
+    "title": "IEEE International Working Conference on Source Code Analysis and Manipulation",
+    "rank": "C",
+    "rating": "4.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/scam-2026/scam-2026-research-track"
+  },
+  {
+    "acronym": "MODELSWARD",
+    "title": "International Conference on Model-Driven Engineering and Software Development",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-09-15",
+    "fullDeadline": "2026-09-15",
+    "url": "https://modelsward.scitevents.org/ImportantDates.aspx"
+  },
+  {
+    "acronym": "ICSoft",
+    "title": "International Conference on Software and Data Technologies",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icsoft.scitevents.org/ImportantDates.aspx"
+  },
+  {
+    "acronym": "IOLTS",
+    "title": "On-Line Testing and Robust System Design",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://orion.polito.it/iolts/"
+  },
+  {
+    "acronym": "QRS",
+    "title": "Software Quality, Reliability, and Security",
+    "rank": "C",
+    "rating": "4.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://qrs26.techconf.org/"
+  },
+  {
+    "acronym": "ABZ",
+    "title": "International Conference Abstract State Machines, Alloy, B, TLA, VDM, and Z",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://abz-conf.org/site/2026/importantdates"
+  },
+  {
+    "acronym": "APSEC",
+    "title": "Asia-Pacific Software Engineering Conference",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-07-06",
+    "fullDeadline": "2026-07-13",
+    "url": "https://conf.researchr.org/track/apsec-2026/apsec-2026-technical-track"
+  },
+  {
+    "acronym": "AST",
+    "title": "Automation of Software Test",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-10-30",
+    "fullDeadline": "2026-10-30",
+    "url": "https://conf.researchr.org/home/ast-2027"
+  },
+  {
+    "acronym": "CICM",
+    "title": "Conference on Intelligent Computer Mathematics",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://cicm-conference.org/2026/cicm.php"
+  },
+  {
+    "acronym": "CLEI",
+    "title": "Latin American Conference on Informatics",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://clei.org/en/2026/01/08/call-for-papers-clei-2026/"
+  },
+  {
+    "acronym": "CoDIT",
+    "title": "International Conference on Control, Decision and Information Technologies",
+    "rank": "C",
+    "rating": "4.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.codit2026.com/index.php/key-dates"
+  },
+  {
+    "acronym": "DLS",
+    "title": "Dynamic Languages Symposium",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.sigplan.org/Conferences/DLS/"
+  },
+  {
+    "acronym": "DSM",
+    "title": "Workshop on Domain Specific Modelling",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/splash-2026"
+  },
+  {
+    "acronym": "DX",
+    "title": "International Workshop on Principles of Diagnosis",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/dx-2026"
+  },
+  {
+    "acronym": "EMMSAD",
+    "title": "Exploring Modelling Methods in Systems Analysis and Design",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.emmsad.org/submission/important-dates"
+  },
+  {
+    "acronym": "EOMAS",
+    "title": "International Workshop on Enterprise and Organizational Modelling and Simulation",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://www.wikicfp.com/cfp/program?id=892"
+  },
+  {
+    "acronym": "FDL",
+    "title": "Forum on Specification and Design Languages",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.fdl-conference.com/submission.html"
+  },
+  {
+    "acronym": "FMICS",
+    "title": "Int. Workshop on Formal Methods for Industrial Critical Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://confest-2026.github.io/fmics/"
+  },
+  {
+    "acronym": "FMIS",
+    "title": "International Workshop on Formal Methods for interactive Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=84653"
+  },
+  {
+    "acronym": "FORTE",
+    "title": "IFIP Joint International Conference on Formal Description Techniques and Protocol Specification, Testing, And Verification",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://www.discotec.org/2026/forte"
+  },
+  {
+    "acronym": "FTfJP",
+    "title": "Workshop on Formal Techniques for Java-like Programs",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.ecoop.org/home/FTfJP-2026"
+  },
+  {
+    "acronym": "HASKELL",
+    "title": "Haskell Workshop",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icfp26.sigplan.org/home/haskellsymp-2026"
+  },
+  {
+    "acronym": "ICBC",
+    "title": "IEEE International Conference on Blockchain and Cryptocurrency",
+    "rank": "C",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icbc2027.ieee-icbc.org/important-dates"
+  },
+  {
+    "acronym": "ICGSE",
+    "title": "IEEE International Conference on Global Software Engineering",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/icgse"
+  },
+  {
+    "acronym": "ICSEA",
+    "title": "International Conference on Software Engineering Advances",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-06-26",
+    "fullDeadline": "2026-06-26",
+    "url": "https://www.iaria.org/conferences2026/CfPICSEA26.html"
+  },
+  {
+    "acronym": "ICTSS",
+    "title": "International Conference on Testing Software and Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-07-01",
+    "fullDeadline": "2026-07-01",
+    "url": "https://easychair.org/cfp/ictss2026"
+  },
+  {
+    "acronym": "ISMM",
+    "title": "International Symposium on Memory Management",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/ismm-2026"
+  },
+  {
+    "acronym": "IWSM Mensura",
+    "title": "Joint Conference of the International Workshop on Software Measurement and the International Conference on Software Process and Product Measurement",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-06-29",
+    "fullDeadline": "2026-06-29",
+    "url": "https://www.iwsm-mensura.org/2026-conference/call-for-paper/"
+  },
+  {
+    "acronym": "LOPSTR",
+    "title": "International Symposium on Logic-based Program Synthesis and Transformation",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icfp26.sigplan.org/home/lopstr-ppdp-2026"
+  },
+  {
+    "acronym": "MEMOCODE",
+    "title": "International Conference on Formal Methods and Models for Co-Design",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://memocode2026.github.io/"
+  },
+  {
+    "acronym": "MISE",
+    "title": "International Workshop on Modelling in Software Engineering",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/mise"
+  },
+  {
+    "acronym": "MPLR",
+    "title": "International Conference on Managed Programming Languages and Runtimes",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.ecoop.org/home/mplr-2026"
+  },
+  {
+    "acronym": "Onward",
+    "title": "International Symposium on New Ideas, New Paradigms, and Reflections on Programming and Software",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.splashcon.org/track/splash-2026-onward--papers"
+  },
+  {
+    "acronym": "OPENSYM",
+    "title": "International Symposium on Open Collaboration",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://opensym.org/"
+  },
+  {
+    "acronym": "PADL",
+    "title": "Practical Aspects of Declarative Languages",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/padl"
+  },
+  {
+    "acronym": "PEPM",
+    "title": "ACM SIGPLAN Workshop on Partial Evaluation and Program Manipulation",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/series/pepm"
+  },
+  {
+    "acronym": "PLOP",
+    "title": "Pattern Languages of Programs",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-07-01",
+    "fullDeadline": "2026-07-01",
+    "url": "https://plopcon.org/plop2026/"
+  },
+  {
+    "acronym": "PLOS",
+    "title": "Workshop on Programming Languages and Operating Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://plos-workshop.org/2026/"
+  },
+  {
+    "acronym": "PPDP",
+    "title": "International Conference on Principles and Practice of Declarative Programming",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://icfp26.sigplan.org/home/lopstr-ppdp-2026"
+  },
+  {
+    "acronym": "PRDC",
+    "title": "Pacific Rim International Symposium on Dependable Computing",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://prdc.dependability.org/"
+  },
+  {
+    "acronym": "RSP",
+    "title": "IEEE International Symposium on Rapid System Prototyping",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-06-23",
+    "fullDeadline": "2026-06-30",
+    "url": "https://conferences.imt-atlantique.fr/rsp-symposium/cfp/"
+  },
+  {
+    "acronym": "SEKE",
+    "title": "International Conference on Software Engineering and Knowledge Engineering",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://ksiresearch.org/seke/seke26main.html"
+  },
+  {
+    "acronym": "SERA",
+    "title": "ACIS Conference on Software Engineering Research, Management and Applications",
+    "rank": "C",
+    "rating": "4.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://acisinternational.org/conferences/sera-2027/"
+  },
+  {
+    "acronym": "SEW",
+    "title": "IEEE Software Engineering Workshop",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://dblp.org/db/conf/sew/index"
+  },
+  {
+    "acronym": "SoMeT",
+    "title": "International Conference on Intelligent Software Methodologies, Tools, and Techniques",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.i-somet.org/somet2026/"
+  },
+  {
+    "acronym": "SPICE",
+    "title": "Software Process Improvement and Capability Determination",
+    "rank": "C",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://link.springer.com/conference/spice"
+  },
+  {
+    "acronym": "SQM",
+    "title": "International Conference on Software Quality Management",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.bcs.org/membership-and-registrations/member-communities/quality-specialist-group/conferences/"
+  },
+  {
+    "acronym": "SSSC",
+    "title": "IFAC Conference on System Structure and Control",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.ifac-control.org/conferences"
+  },
+  {
+    "acronym": "TAP",
+    "title": "International Conference on Tests and Proofs",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/fm-2026/fm-2026-tap"
+  },
+  {
+    "acronym": "VECoS",
+    "title": "The International Conference on Verification and Evaluation of Computer and Communication Systems",
+    "rank": "C",
+    "rating": "N/A",
+    "deadline": "2026-06-22",
+    "fullDeadline": "2026-07-06",
+    "url": "https://vecos-world.org/2026/"
+  },
+  {
+    "acronym": "Ada-Europe",
+    "title": "International Conference on Reliable Software Technologies",
+    "rank": "Journal Published",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "2027-02-08",
+    "url": "https://www.ada-europe.org/conference2026/"
+  },
+  {
+    "acronym": "EICS",
+    "title": "Engineering Interactive Computing Systems",
+    "rank": "Journal Published",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://eics.acm.org/2026/important-dates.html"
+  },
+  {
+    "acronym": "PERFORMANCE",
+    "title": "IFIP International Symposium on Computing Performance, Modelling, Measurement and Evaluation",
+    "rank": "Journal Published",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://performance2026.github.io/"
+  },
+  {
+    "acronym": "CSIT",
+    "title": "Computer Sciences and Information Technologies",
+    "rank": "National",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "http://csit.ieee.org.ua/"
+  },
+  {
+    "acronym": "TASE",
+    "title": "International Symposium on Theoretical Aspects of Software Engineering",
+    "rank": "National: China",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://tase2026.github.io/"
+  },
+  {
+    "acronym": "RTNS",
+    "title": "International Conference on Real-Time and Network Systems",
+    "rank": "National: France",
+    "rating": "N/A",
+    "deadline": "2026-08-20",
+    "fullDeadline": "2026-08-20",
+    "url": "https://2026.rtns-conference.org/cfp/"
+  },
+  {
+    "acronym": "EuroPLop",
+    "title": "European Conference on Pattern Languages of Programs",
+    "rank": "National: Germany",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.europlop.net/call-for-papers/"
+  },
+  {
+    "acronym": "Informatics",
+    "title": "IEEE International Scientific Conference on Informatics",
+    "rank": "National: Slovakia",
+    "rating": "N/A",
+    "deadline": "2026-09-20",
+    "fullDeadline": "2026-09-20",
+    "url": "https://informatics.kpi.fei.tuke.sk/"
+  },
+  {
+    "acronym": "QUATIC",
+    "title": "International Conference on the Quality of Information and Communications Technology",
+    "rank": "National/Regional",
+    "rating": "5.0",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://2026.quatic.org/call-for-papers"
+  },
+  {
+    "acronym": "EDCC",
+    "title": "European Dependable Computing Conference",
+    "rank": "Unranked",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://www.cs.kent.ac.uk/EDCC2026/dates"
+  }
+]

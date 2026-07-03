@@ -1,0 +1,67 @@
+name: Monthly Codex discovery reminder
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create monthly reminder issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "Monthly Codex check: conference URL discovery";
+            const { owner, repo } = context.repo;
+
+            const existing = await github.rest.search.issuesAndPullRequests({
+              q: [
+                `repo:${owner}/${repo}`,
+                "is:issue",
+                "is:open",
+                `"${title}"`,
+              ].join(" "),
+            });
+
+            if (existing.data.total_count > 0) {
+              core.info("An open monthly reminder issue already exists.");
+              return;
+            }
+
+            const body = [
+              "This is a monthly reminder to run a local Codex-assisted check for newly published CFP / important dates pages that normal GitHub Actions detection may miss.",
+              "",
+              "Rules:",
+              "- Do not add or remove conference entries.",
+              "- Keep `data/conferences.json` as the fixed CORE/ICORE genre master list.",
+              "- Update only `url`, `deadline`, `fullDeadline`, and, when justified, `rating`.",
+              "- Changing `deadline` or `fullDeadline` to `N/A` is allowed when the date cannot be confirmed.",
+              "- Past `fullDeadline` values must remain in the master list.",
+              "",
+              "Suggested local Codex task:",
+              "",
+              "```text",
+              "Use the repository skill `conference-url-discovery`.",
+              "Review data/conferences.json for existing conferences whose URL is old, generic, or whose fullDeadline is N/A.",
+              "Prioritize A*, A, then B-ranked conferences.",
+              "Search for newly published official CFP / important dates / research track pages.",
+              "If a better URL or confirmed deadline is found, update data/conferences.json, run scripts/build_site.py and scripts/summarize_changes.py, then prepare a PR.",
+              "Do not add or remove conference entries.",
+              "```",
+              "",
+              "Close this issue after the monthly local Codex check is complete.",
+            ].join("\n");
+
+            await github.rest.issues.create({
+              owner,
+              repo,
+              title,
+              body,
+              labels: ["maintenance", "codex-review"],
+            });
