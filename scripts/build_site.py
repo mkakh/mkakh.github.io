@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
+import hashlib
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -13,7 +13,13 @@ VERSION_PATH = ROOT / "version.json"
 def main():
     conferences = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     data_json = json.dumps(conferences, ensure_ascii=False, indent=2)
-    build_version = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    version_source = json.dumps(
+        conferences,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    build_version = hashlib.sha256(version_source.encode("utf-8")).hexdigest()[:16]
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
