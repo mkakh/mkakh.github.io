@@ -62,7 +62,55 @@
     font-size: .8rem; font-weight: 700; background: #eef1f5;
   }
   .acr { font-weight: 600; }
+  .mobile-cards { display: none; }
+  .conf-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .85rem;
+  }
+  .conf-card + .conf-card { margin-top: .75rem; }
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .35rem;
+  }
+  .card-acr { font-weight: 700; font-size: 1rem; }
+  .card-title { margin: 0 0 .75rem; font-size: .95rem; line-height: 1.35; }
+  .card-meta {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, auto) 1fr;
+    gap: .35rem .75rem;
+    font-size: .88rem;
+  }
+  .card-label { color: var(--muted); }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .8rem;
+    min-height: 2.25rem;
+    padding: .45rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #eef1f5;
+    color: var(--text);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .card-link:hover { background: #e3e8ef; }
   footer { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 2rem; color: var(--muted); font-size: .85rem; }
+  @media (max-width: 720px) {
+    header { padding: 1.25rem 1rem .75rem; }
+    h1 { font-size: 1.35rem; }
+    .controls { padding: 0 1rem 1rem; gap: .55rem; }
+    input[type="search"], select { width: 100%; font-size: 1rem; }
+    main { padding: 0 1rem 2rem; }
+    table { display: none; }
+    .mobile-cards { display: block; }
+    footer { padding: 0 1rem 1.5rem; }
+  }
 </style>
 </head>
 <body>
@@ -96,6 +144,7 @@
     </thead>
     <tbody></tbody>
   </table>
+  <div id="cards" class="mobile-cards"></div>
 </main>
 <footer>Generated from data/conferences.json</footer>
 
@@ -1221,6 +1270,7 @@ function rankClass(r) {
 function rankBucket(r) { return ["A*","A","B","C"].includes(r) ? r : "other"; }
 
 const tbody = document.querySelector("#tbl tbody");
+const cardsEl = document.getElementById("cards");
 const searchEl = document.getElementById("search");
 const filterEl = document.getElementById("rankFilter");
 const countEl = document.getElementById("count");
@@ -1262,6 +1312,20 @@ function render() {
       <td>${d.fullDeadline}</td>
       <td>${d.url ? `<a href="${d.url}" target="_blank" rel="noopener">link</a>` : ""}</td>
     </tr>`).join("");
+  cardsEl.innerHTML = rows.map(d => `
+    <article class="conf-card">
+      <div class="card-head">
+        <span class="badge ${rankClass(d.rank)}">${d.rank}</span>
+        <span class="card-acr">${d.acronym}</span>
+      </div>
+      <p class="card-title">${d.title}</p>
+      <dl class="card-meta">
+        <dt class="card-label">Avg Rating</dt><dd>${d.rating}</dd>
+        <dt class="card-label">Abstract</dt><dd>${d.deadline}</dd>
+        <dt class="card-label">Full Paper</dt><dd>${d.fullDeadline}</dd>
+      </dl>
+      ${d.url ? `<a class="card-link" href="${d.url}" target="_blank" rel="noopener">Open URL</a>` : ""}
+    </article>`).join("");
   countEl.textContent = rows.length;
 }
 
