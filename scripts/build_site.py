@@ -1,22 +1,28 @@
 #!/usr/bin/env python3
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "conferences.json"
 OUTPUT_PATH = ROOT / "index.html"
+VERSION_PATH = ROOT / "version.json"
 
 
 def main():
     conferences = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     data_json = json.dumps(conferences, ensure_ascii=False, indent=2)
+    build_version = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Conference Rankings (ICORE 2026)</title>
 <style>
   :root {{
@@ -192,6 +198,7 @@ def main():
 <footer>Generated from data/conferences.json</footer>
 
 <script>
+const BUILD_VERSION = {json.dumps(build_version)};
 const DATA = {data_json};
 
 const RANK_ORDER = {{"A*":0, "A":1, "B":2, "C":3}};
@@ -213,6 +220,19 @@ const sortKeyMobile = document.getElementById("sortKeyMobile");
 const sortDirMobile = document.getElementById("sortDirMobile");
 
 let sortKey = "rank", sortAsc = true;
+
+function checkFreshVersion() {{
+  if (!window.fetch) return;
+  fetch(`version.json?ts=${{Date.now()}}`, {{ cache: "no-store" }})
+    .then(response => response.ok ? response.json() : null)
+    .then(info => {{
+      if (!info || !info.version || info.version === BUILD_VERSION) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set("v", info.version);
+      window.location.replace(url.toString());
+    }})
+    .catch(() => {{}});
+}}
 
 function render() {{
   const q = searchEl.value.trim().toLowerCase();
@@ -286,11 +306,16 @@ sortDirMobile.addEventListener("click", () => {{
   render();
 }});
 render();
+checkFreshVersion();
 </script>
 </body>
 </html>
 """
     OUTPUT_PATH.write_text(html, encoding="utf-8")
+    VERSION_PATH.write_text(
+        json.dumps({"version": build_version}, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
 
 
 if __name__ == "__main__":

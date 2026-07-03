@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Conference Rankings (ICORE 2026)</title>
 <style>
   :root {
@@ -178,6 +181,7 @@
 <footer>Generated from data/conferences.json</footer>
 
 <script>
+const BUILD_VERSION = "2026-07-03T21:17:52+00:00";
 const DATA = [
   {
     "acronym": "ASE",
@@ -1308,6 +1312,19 @@ const sortDirMobile = document.getElementById("sortDirMobile");
 
 let sortKey = "rank", sortAsc = true;
 
+function checkFreshVersion() {
+  if (!window.fetch) return;
+  fetch(`version.json?ts=${Date.now()}`, { cache: "no-store" })
+    .then(response => response.ok ? response.json() : null)
+    .then(info => {
+      if (!info || !info.version || info.version === BUILD_VERSION) return;
+      const url = new URL(window.location.href);
+      url.searchParams.set("v", info.version);
+      window.location.replace(url.toString());
+    })
+    .catch(() => {});
+}
+
 function render() {
   const q = searchEl.value.trim().toLowerCase();
   const rf = filterEl.value;
@@ -1380,6 +1397,7 @@ sortDirMobile.addEventListener("click", () => {
   render();
 });
 render();
+checkFreshVersion();
 </script>
 </body>
 </html>
