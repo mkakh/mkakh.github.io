@@ -57,7 +57,17 @@ def main():
     font-size: .95rem;
     background: var(--card);
   }}
+  button {{
+    padding: .5rem .7rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: .95rem;
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+  }}
   input[type="search"] {{ flex: 1; min-width: 200px; }}
+  .mobile-sort {{ display: none; }}
   main {{ max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 3rem; }}
   table {{ width: 100%; border-collapse: collapse; background: var(--card);
           border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }}
@@ -119,7 +129,15 @@ def main():
     header {{ padding: 1.25rem 1rem .75rem; }}
     h1 {{ font-size: 1.35rem; }}
     .controls {{ padding: 0 1rem 1rem; gap: .55rem; }}
-    input[type="search"], select {{ width: 100%; font-size: 1rem; }}
+    input[type="search"], select, button {{ width: 100%; font-size: 1rem; }}
+    .mobile-sort {{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .55rem;
+      width: 100%;
+    }}
+    .mobile-sort select {{ min-width: 0; }}
+    .mobile-sort button {{ width: auto; min-width: 5rem; }}
     main {{ padding: 0 1rem 2rem; }}
     table {{ display: none; }}
     .mobile-cards {{ display: block; }}
@@ -142,6 +160,17 @@ def main():
     <option value="C">C</option>
     <option value="other">Other</option>
   </select>
+  <div class="mobile-sort">
+    <select id="sortKeyMobile" aria-label="Sort by">
+      <option value="rank">Sort: Rank</option>
+      <option value="acronym">Sort: Acronym</option>
+      <option value="title">Sort: Title</option>
+      <option value="rating">Sort: Avg Rating</option>
+      <option value="deadline">Sort: Abstract Deadline</option>
+      <option value="fullDeadline">Sort: Full Paper Deadline</option>
+    </select>
+    <button id="sortDirMobile" type="button">Asc</button>
+  </div>
 </div>
 <main>
   <table id="tbl">
@@ -180,6 +209,8 @@ const cardsEl = document.getElementById("cards");
 const searchEl = document.getElementById("search");
 const filterEl = document.getElementById("rankFilter");
 const countEl = document.getElementById("count");
+const sortKeyMobile = document.getElementById("sortKeyMobile");
+const sortDirMobile = document.getElementById("sortDirMobile");
 
 let sortKey = "rank", sortAsc = true;
 
@@ -233,6 +264,8 @@ function render() {{
       ${{d.url ? `<a class="card-link" href="${{d.url}}" target="_blank" rel="noopener">Open URL</a>` : ""}}
     </article>`).join("");
   countEl.textContent = rows.length;
+  sortKeyMobile.value = sortKey;
+  sortDirMobile.textContent = sortAsc ? "Asc" : "Desc";
 }}
 
 document.querySelectorAll("th").forEach(th => {{
@@ -244,6 +277,14 @@ document.querySelectorAll("th").forEach(th => {{
 }});
 searchEl.addEventListener("input", render);
 filterEl.addEventListener("change", render);
+sortKeyMobile.addEventListener("change", () => {{
+  sortKey = sortKeyMobile.value;
+  render();
+}});
+sortDirMobile.addEventListener("click", () => {{
+  sortAsc = !sortAsc;
+  render();
+}});
 render();
 </script>
 </body>
