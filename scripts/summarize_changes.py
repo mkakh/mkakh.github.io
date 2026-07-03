@@ -118,7 +118,9 @@ def main():
         "Rule: the conference list is a fixed CORE/ICORE genre master list. "
         "Automation may update deadlines and URLs, including changing a deadline "
         "to `N/A` when it cannot be confirmed, but must not add or remove "
-        "conference entries. The abstract deadline may already be past.",
+        "conference entries. If only the abstract deadline has passed, keep the "
+        "dates. If the full paper deadline has passed, reset both `deadline` and "
+        "`fullDeadline` to `N/A` so the next announced cycle can be entered later.",
         "",
         f"- Master list size: {len(after)} conferences",
         f"- Deadline/URL/rating changes: {len(changed)} conferences",

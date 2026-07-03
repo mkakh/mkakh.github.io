@@ -14,8 +14,9 @@ Use this skill for manual Codex review of conference update PRs in this reposito
 - Do not rename `acronym` values unless the user explicitly asks.
 - Allowed fields to update: `deadline`, `fullDeadline`, `url`, and, when justified, `rating`.
 - Changing `deadline` or `fullDeadline` to `N/A` is allowed when the date cannot be confirmed.
-- A past `fullDeadline` must not remove the conference from the master list.
-- Abstract deadline may be past.
+- If only the abstract deadline has passed, keep both dates.
+- If `fullDeadline` has passed, reset both `deadline` and `fullDeadline` to `N/A`.
+- A past `fullDeadline` must not remove the conference entry from the master list.
 
 ## Review Workflow
 
@@ -23,7 +24,7 @@ Use this skill for manual Codex review of conference update PRs in this reposito
 2. Confirm the acronym set is unchanged. If not, flag it as a rule violation.
 3. For each `deadline`, `fullDeadline`, or `url` change, check whether the PR summary gives a plausible source or reason.
 4. Treat changes to `N/A` as requiring manual confidence: confirm whether the source page lost the date or extraction likely failed.
-5. For past `fullDeadline` values, confirm they are reported as expired but still retained.
+5. For past `fullDeadline` values, confirm `deadline` and `fullDeadline` were reset to `N/A` and the entry was retained.
 6. Rebuild with `python scripts/build_site.py` after data edits.
 
 ## Comment Shape

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json
 import os
+from copy import deepcopy
 from datetime import date
 from pathlib import Path
 
@@ -25,6 +26,16 @@ def key(conf):
 
 def index_by_acronym(conferences):
     return {key(conf): conf for conf in conferences}
+
+
+def reset_expired_full_deadlines(conferences, today):
+    updated = deepcopy(conferences)
+    for conf in updated:
+        full_deadline = parse_date(conf.get("fullDeadline"))
+        if full_deadline is not None and full_deadline < today:
+            conf["deadline"] = "N/A"
+            conf["fullDeadline"] = "N/A"
+    return updated
 
 
 def build_summary(original, updated, today):
@@ -57,13 +68,14 @@ def build_summary(original, updated, today):
         "",
         "Rule: the conference list is a fixed CORE/ICORE genre master list. "
         "Automation may update deadlines and URLs, but must not add or remove "
-        "conference entries. The abstract deadline may already be past. Entries "
-        "with `N/A` full paper deadline are kept for manual review.",
+        "conference entries. If only the abstract deadline has passed, keep the "
+        "dates. If the full paper deadline has passed, reset both `deadline` and "
+        "`fullDeadline` to `N/A` so the next announced cycle can be entered later.",
         "",
         f"- Master list size: {len(updated)} conferences",
         f"- Unexpected additions: {len(added_keys)} conferences",
         f"- Unexpected removals: {len(removed_keys)} conferences",
-        f"- Expired full paper deadlines: {len(expired)} conferences",
+        f"- Expired full paper deadlines remaining: {len(expired)} conferences",
         f"- Unknown full paper deadline: {len(unknown_deadline)} conferences",
         "",
         "## Updated Deadlines or URLs",
@@ -112,7 +124,7 @@ def build_summary(original, updated, today):
 def main():
     today = date.fromisoformat(os.environ.get("TODAY", date.today().isoformat()))
     original = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    updated = original
+    updated = reset_expired_full_deadlines(original, today)
 
     DATA_PATH.write_text(
         json.dumps(updated, ensure_ascii=False, indent=2) + "\n",
