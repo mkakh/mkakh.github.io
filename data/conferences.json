@@ -1105,5 +1105,24 @@
     "deadline": "N/A",
     "fullDeadline": "N/A",
     "url": "https://www.cs.kent.ac.uk/EDCC2026/dates"
+  },
+
+  {
+    "acronym": "ISSRE",
+    "title": "IEEE International Symposium on Software Reliability Engineering",
+    "rank": "A",
+    "rating": "N/A",
+    "deadline": "2026-07-12",
+    "fullDeadline": "2026-07-12",
+    "url": "https://cyprusconferences.org/issre2026/"
+  },
+  {
+    "acronym": "COMPSAC",
+    "title": "IEEE International Computer Software and Applications Conference (Tokyo 2027)",
+    "rank": "B",
+    "rating": "N/A",
+    "deadline": "2027-01-31",
+    "fullDeadline": "2027-01-31",
+    "url": "https://ieeecompsac.computer.org/"
   }
 ]
