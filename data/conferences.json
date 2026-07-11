@@ -67,8 +67,8 @@
     "title": "ACM-SIGACT Symposium on Principles of Programming Languages",
     "rank": "A*",
     "rating": "N/A",
-    "deadline": "2026-07-09",
-    "fullDeadline": "2026-07-09",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://popl27.sigplan.org/track/POPL-2027-popl-research-papers"
   },
   {
@@ -76,8 +76,8 @@
     "title": "Measurement and Modeling of Computer Systems",
     "rank": "A*",
     "rating": "5.0",
-    "deadline": "2026-07-03",
-    "fullDeadline": "2026-07-10",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://www.sigmetrics.org/sigmetrics2027/pages/cfp.html"
   },
   {
@@ -418,8 +418,8 @@
     "title": "IEEE International Conference on Engineering of Complex Computer Systems",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "2026-06-29",
-    "fullDeadline": "2026-07-06",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://formal-analysis.com/iceccs/2026/"
   },
   {
@@ -1012,8 +1012,8 @@
     "title": "The International Conference on Verification and Evaluation of Computer and Communication Systems",
     "rank": "C",
     "rating": "N/A",
-    "deadline": "2026-06-22",
-    "fullDeadline": "2026-07-06",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://vecos-world.org/2026/"
   },
   {
