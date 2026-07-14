@@ -193,53 +193,12 @@ exit 22
   withMockCurl(mock, (env) => {
     const result = runScript(
       'tools/web-search.sh',
-      ['site:maker.example site:shop.example B0ABCDEFGH Exact Product'],
+      ['site:maker.example site:shop.example exact product'],
       { ...env, SERPER_API_KEY: 'test' }
     );
     assert.equal(result.status, 1);
     assert.doesNotMatch(result.stderr, /retrying with relaxed query/);
     assert.match(result.stderr, /reformulate the Serper query/);
-  });
-});
-
-test('web-search preserves the official site first and filters the broad ASIN retry', () => {
-  const mock = `
-if [[ "$*" == *google.serper.dev* ]]; then
-  if [[ "$*" == *site:ankerjapan.com* && "$*" == *B0DLWDJJQ8* ]]; then
-    mock_reply '{"organic":[]}' 200 "$@"
-  elif [[ "$*" == *site:ankerjapan.com* && "$*" == *Anker\\ USB-C\\ Hub\\ Exact\\ \\(5-in-1\\)* ]]; then
-    mock_reply '{"organic":[{"title":"Anker USB-C Hub Exact (5-in-1) | Official","link":"https://www.ankerjapan.com/products/a8357","snippet":"refined primary"},{"title":"Different Hub","link":"https://www.ankerjapan.com/products/wrong-related","snippet":"Related to Anker USB-C Hub Exact (5-in-1)"}]}' 200 "$@"
-  elif [[ "$*" == *site:ankerjapan.com* ]]; then
-    mock_reply '{"organic":[{"title":"Preliminary official candidate","link":"https://www.ankerjapan.com/products/wrong","snippet":"too broad"}]}' 200 "$@"
-  else
-    mock_reply '{"organic":[{"title":"Unrelated product","link":"https://example.com/wrong","snippet":"wrong"},{"title":"Anker USB-C Hub Exact (5-in-1) Gray 100W ...","link":"https://www.amazon.co.jp/dp/B0DLWDJJQ8","snippet":"found"}]}' 200 "$@"
-  fi
-  exit 0
-fi
-mock_reply '{"web":{"results":[{"title":"Unexpected Brave result","url":"https://example.com/","description":"wrong provider"}]}}' 200 "$@"
-`;
-  withMockCurl(mock, (env) => {
-    const result = runScript(
-      'tools/web-search.sh',
-      ['--count', '3', 'site:ankerjapan.com B0DLWDJJQ8 Anker USB-C hub'],
-      {
-        ...env,
-        SERPER_API_KEY: 'test',
-        BRAVE_SEARCH_API_KEY: 'test'
-      }
-    );
-    assert.equal(result.status, 0);
-    assert.match(result.stderr, /retrying with relaxed query: site:ankerjapan.com Anker USB-C hub/);
-    assert.match(result.stderr, /retrying with relaxed query: B0DLWDJJQ8 Anker USB-C hub/);
-    assert.match(result.stderr, /refining official-domain Serper results with product title: Anker USB-C Hub Exact \(5-in-1\)/);
-    assert.match(result.stderr, /search_provider=serper/);
-    assert.doesNotMatch(result.stderr, /falling back to Brave/);
-    assert.match(result.stdout, /URL: https:\/\/www\.ankerjapan\.com\/products\/a8357/);
-    assert.match(result.stdout, /URL: https:\/\/www\.amazon\.co\.jp\/dp\/B0DLWDJJQ8/);
-    assert.doesNotMatch(result.stdout, /Preliminary official candidate/);
-    assert.doesNotMatch(result.stdout, /Different Hub/);
-    assert.doesNotMatch(result.stdout, /TITLE: Unrelated product/);
-    assert.doesNotMatch(result.stdout, /Unexpected Brave result/);
   });
 });
 
@@ -264,67 +223,6 @@ exit 22
     assert.equal(result.status, 0);
     assert.match(result.stderr, /retrying with relaxed query: site:example.com model/);
     assert.match(result.stdout, /TITLE: Normalized site result/);
-  });
-});
-
-test('web-search omits unconfirmed broad official candidates', () => {
-  const mock = `
-if [[ "$*" == *google.serper.dev* ]]; then
-  if [[ "$*" == *site:maker.example* && "$*" == *B0ABCDEFGH* ]]; then
-    mock_reply '{"organic":[]}' 200 "$@"
-  elif [[ "$*" == *site:maker.example* && "$*" == *Exact\\ Product* ]]; then
-    mock_reply '{"organic":[{"title":"Different Product","link":"https://maker.example/wrong","snippet":"not a match"}]}' 200 "$@"
-  elif [[ "$*" == *site:maker.example* ]]; then
-    mock_reply '{"organic":[{"title":"Broad Candidate","link":"https://maker.example/broad","snippet":"unconfirmed"}]}' 200 "$@"
-  else
-    mock_reply '{"organic":[{"title":"Exact Product (Pro) Black ...","link":"https://shop.example/dp/B0ABCDEFGH","snippet":"B0ABCDEFGH"}]}' 200 "$@"
-  fi
-  exit 0
-fi
-exit 22
-`;
-  withMockCurl(mock, (env) => {
-    const result = runScript(
-      'tools/web-search.sh',
-      ['site:maker.example B0ABCDEFGH Exact Product'],
-      { ...env, SERPER_API_KEY: 'test' }
-    );
-    assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
-    assert.match(result.stderr, /exact-title official-domain result was not confirmed/);
-    assert.match(result.stdout, /URL: https:\/\/shop\.example\/dp\/B0ABCDEFGH/);
-    assert.doesNotMatch(result.stdout, /Broad Candidate|Different Product/);
-  });
-});
-
-test('web-search omits broad official candidates when the exact ASIN retry is empty', () => {
-  const mock = `
-if [[ "$*" == *google.serper.dev* ]]; then
-  if [[ "$*" == *site:maker.example* && "$*" == *B0ABCDEFGH* ]]; then
-    mock_reply '{"organic":[]}' 200 "$@"
-  elif [[ "$*" == *site:maker.example* ]]; then
-    mock_reply '{"organic":[{"title":"Broad Candidate","link":"https://maker.example/broad","snippet":"unconfirmed"}]}' 200 "$@"
-  else
-    mock_reply '{"organic":[]}' 200 "$@"
-  fi
-  exit 0
-fi
-mock_reply '{"web":{"results":[{"title":"Unexpected Brave result","url":"https://brave.example/","description":"should not run"}]}}' 200 "$@"
-`;
-  withMockCurl(mock, (env) => {
-    const result = runScript(
-      'tools/web-search.sh',
-      ['site:maker.example B0ABCDEFGH Exact Product'],
-      {
-        ...env,
-        SERPER_API_KEY: 'test',
-        BRAVE_SEARCH_API_KEY: 'test'
-      }
-    );
-    assert.equal(result.status, 1);
-    assert.match(result.stderr, /exact-ASIN result was not found; omitting broad official candidates/);
-    assert.match(result.stderr, /reformulate the Serper query/);
-    assert.doesNotMatch(result.stderr, /search_provider=brave/);
-    assert.doesNotMatch(result.stdout, /Broad Candidate|Unexpected Brave result/);
   });
 });
 

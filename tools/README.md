@@ -3,6 +3,9 @@
 Use these helpers instead of scraping Google, Bing, or DuckDuckGo result pages.
 They require `bash`, `curl`, and `jq`.
 
+These tools are intended for local Codex-assisted research. GitHub Actions do
+not call them or require their API keys.
+
 ## Default routed search
 
 `web-search.sh` is the normal entry point. It loads ignored key files from
@@ -20,8 +23,7 @@ reformulation still fails or when an independent index is useful.
 ```
 
 Serper receives ordinary domain-level `site:` operators unchanged. After a
-valid empty response, the router can narrowly recover from contradictory
-manufacturer-site/Amazon-ASIN queries and can broaden `site:domain/path` to
+valid empty response, the router can broaden `site:domain/path` to
 `site:domain`. If a URL is already known, fetch it directly instead of relying
 on broadened search ranking.
 
@@ -71,5 +73,5 @@ repository pages before relying on them.
 bash -n tools/*.sh
 shellcheck tools/*.sh
 node --test tools/search-tools.test.mjs
-./tools/web-search.sh --provider serper --count 3 'site:conf.researchr.org ICSE'
+./tools/web-search.sh --provider serper --count 3 'ICSE 2027 Research Track official'
 ```

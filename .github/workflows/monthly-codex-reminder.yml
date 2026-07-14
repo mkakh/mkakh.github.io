@@ -34,6 +34,31 @@ jobs:
               return;
             }
 
+            const desiredLabels = [
+              {
+                name: "maintenance",
+                color: "0e8a16",
+                description: "Repository maintenance task",
+              },
+              {
+                name: "codex-review",
+                color: "5319e7",
+                description: "Needs local Codex-assisted review",
+              },
+            ];
+            const currentLabels = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              { owner, repo, per_page: 100 },
+            );
+            const currentLabelNames = new Set(
+              currentLabels.map((label) => label.name),
+            );
+
+            for (const label of desiredLabels) {
+              if (currentLabelNames.has(label.name)) continue;
+              await github.rest.issues.createLabel({ owner, repo, ...label });
+            }
+
             const body = [
               "This is a monthly reminder to run a local Codex-assisted check for newly published CFP / important dates pages that normal GitHub Actions detection may miss.",
               "",
@@ -64,5 +89,5 @@ jobs:
               repo,
               title,
               body,
-              labels: ["maintenance", "codex-review"],
+              labels: desiredLabels.map((label) => label.name),
             });

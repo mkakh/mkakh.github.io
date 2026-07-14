@@ -115,82 +115,34 @@ capture_provider() {
 }
 
 serper_relaxed_queries=()
-serper_relaxed_required_tokens=()
-serper_relaxed_site_token=""
-serper_requires_exact_confirmation=0
 
 build_serper_relaxed_queries() {
   local original="$1"
-  local asin_token=""
-  local site_domain=""
   local token=""
   local normalized_token=""
-  local has_asin=0
-  local has_site=0
   local site_count=0
   local has_site_path=0
-  local has_non_amazon_site=0
-  local without_site=()
   local normalized_tokens=()
-  local normalized_without_asin=()
   local tokens=()
 
   serper_relaxed_queries=()
-  serper_relaxed_required_tokens=()
-  serper_relaxed_site_token=""
-  serper_requires_exact_confirmation=0
   read -r -a tokens <<<"$original"
 
   for token in "${tokens[@]}"; do
     normalized_token="$token"
     if [[ "$token" =~ ^site: ]]; then
-      has_site=1
       ((site_count += 1))
-      site_domain="${token#site:}"
-      site_domain="${site_domain%%/*}"
-      if [[ "${site_domain,,}" != amazon.* && "${site_domain,,}" != *.amazon.* ]]; then
-        has_non_amazon_site=1
-      fi
       if [[ "$token" =~ ^site:([^/[:space:]]+)/.+$ ]]; then
         normalized_token="site:${BASH_REMATCH[1]}"
         has_site_path=1
       fi
-      if [[ "${site_domain,,}" != amazon.* && "${site_domain,,}" != *.amazon.* ]] &&
-         [[ -z "$serper_relaxed_site_token" ]]; then
-        serper_relaxed_site_token="$normalized_token"
-      fi
-    else
-      without_site+=("$token")
     fi
 
     normalized_tokens+=("$normalized_token")
-
-    if [[ "$token" =~ ^[Bb]0[A-Za-z0-9]{8}$ ]]; then
-      has_asin=1
-      if [[ -z "$asin_token" ]]; then asin_token="$token"; fi
-      continue
-    fi
-
-    normalized_without_asin+=("$normalized_token")
   done
 
-  # Preserve the requested manufacturer/primary-source boundary first by
-  # removing the external Amazon identifier. Then run a second, identifier-
-  # precise search without the conflicting site restriction. The second result
-  # set is filtered to blocks that actually contain the ASIN.
-  if (( has_site == 1 && site_count == 1 && has_asin == 1 && has_non_amazon_site == 1 )); then
-    serper_requires_exact_confirmation=1
-    if (( ${#normalized_without_asin[@]} > 0 )); then
-      serper_relaxed_queries+=("${normalized_without_asin[*]}")
-      serper_relaxed_required_tokens+=("")
-    fi
-    if (( ${#without_site[@]} > 0 )); then
-      serper_relaxed_queries+=("${without_site[*]}")
-      serper_relaxed_required_tokens+=("$asin_token")
-    fi
-  elif (( site_count == 1 && has_site_path == 1 && ${#normalized_tokens[@]} > 0 )); then
+  if (( site_count == 1 && has_site_path == 1 && ${#normalized_tokens[@]} > 0 )); then
     serper_relaxed_queries+=("${normalized_tokens[*]}")
-    serper_relaxed_required_tokens+=("")
   fi
 }
 
@@ -210,73 +162,9 @@ run_serper_with_transient_retry() {
   return 1
 }
 
-filter_provider_output_by_token() {
-  local required_token="$1"
-  local filtered=""
-
-  filtered="$(awk -v token="$required_token" '
-    BEGIN { RS=""; ORS="\n\n"; needle=tolower(token) }
-    index(tolower($0), needle) > 0 { print }
-  ' <<<"$provider_output")"
-  if [[ -z "$filtered" ]]; then
-    provider_output=""
-    provider_state="empty"
-    return 1
-  fi
-  provider_output="$filtered"
-  return 0
-}
-
-filter_provider_output_by_title() {
-  local required_title="$1"
-  local filtered=""
-
-  filtered="$(awk -v title="$required_title" '
-    BEGIN { RS=""; ORS="\n\n"; needle=tolower(title) }
-    {
-      heading=$0
-      sub(/\n.*/, "", heading)
-      if (index(tolower(heading), needle) > 0) print
-    }
-  ' <<<"$provider_output")"
-  if [[ -z "$filtered" ]]; then
-    provider_output=""
-    provider_state="empty"
-    return 1
-  fi
-  provider_output="$filtered"
-  return 0
-}
-
-product_title_core() {
-  local title="$1"
-
-  # Marketplace result titles often append a colour, wattage, seller name, or
-  # an ellipsis after the canonical product name. A parenthesized feature list
-  # is usually still part of that name, so retain text through the final closing
-  # parenthesis when one is present.
-  title="${title%% ...*}"
-  title="${title%% …*}"
-  if [[ "$title" =~ ^(.+\)) ]]; then
-    title="${BASH_REMATCH[1]}"
-  fi
-  title="${title%% | *}"
-  title="${title%% - Amazon*}"
-  title="${title%"${title##*[![:space:]]}"}"
-  printf '%s\n' "$title"
-}
-
 try_serper() {
-  local collected_output=""
-  local exact_output=""
   local fallback_state="empty"
-  local first_exact_title=""
-  local index=0
-  local primary_output=""
-  local refinement_title=""
-  local quoted_title=""
   local relaxed_query=""
-  local required_token=""
 
   serper_query="$query"
   if run_serper_with_transient_retry; then
@@ -287,64 +175,14 @@ try_serper() {
   fi
 
   build_serper_relaxed_queries "$query"
-  for index in "${!serper_relaxed_queries[@]}"; do
-    relaxed_query="${serper_relaxed_queries[$index]}"
-    required_token="${serper_relaxed_required_tokens[$index]}"
+  for relaxed_query in "${serper_relaxed_queries[@]}"; do
     printf 'notice: Serper returned no results; retrying with relaxed query: %s\n' "$relaxed_query" >&2
     serper_query="$relaxed_query"
     if run_serper_with_transient_retry; then
-      if [[ -n "$required_token" ]] &&
-         ! filter_provider_output_by_token "$required_token"; then
-        printf 'notice: relaxed Serper results did not contain required identifier %s\n' "$required_token" >&2
-        continue
-      fi
-      if [[ -n "$required_token" ]]; then
-        if [[ -n "$exact_output" ]]; then exact_output+=$'\n\n'; fi
-        exact_output+="$provider_output"
-      else
-        if [[ -n "$primary_output" ]]; then primary_output+=$'\n\n'; fi
-        primary_output+="$provider_output"
-      fi
-      continue
+      return 0
     fi
     if [[ "$provider_state" != "empty" ]]; then fallback_state="$provider_state"; fi
   done
-
-  if (( serper_requires_exact_confirmation == 1 )); then
-    if [[ -n "$exact_output" && -n "$serper_relaxed_site_token" ]]; then
-      first_exact_title="$(awk '
-        /^TITLE: / { sub(/^TITLE: /, ""); print; exit }
-      ' <<<"$exact_output")"
-    fi
-    if [[ -n "$first_exact_title" ]]; then
-      refinement_title="$(product_title_core "$first_exact_title")"
-      quoted_title="${refinement_title//\"/}"
-      serper_query="$serper_relaxed_site_token \"$quoted_title\""
-      printf 'notice: refining official-domain Serper results with product title: %s\n' "$refinement_title" >&2
-      if run_serper_with_transient_retry &&
-         filter_provider_output_by_title "$refinement_title"; then
-        primary_output="$provider_output"
-      else
-        printf 'notice: exact-title official-domain result was not confirmed; omitting broad official candidates\n' >&2
-        primary_output=""
-      fi
-    else
-      printf 'notice: exact-ASIN result was not found; omitting broad official candidates\n' >&2
-      primary_output=""
-    fi
-  fi
-
-  if [[ -n "$primary_output" ]]; then collected_output="$primary_output"; fi
-  if [[ -n "$exact_output" ]]; then
-    if [[ -n "$collected_output" ]]; then collected_output+=$'\n\n'; fi
-    collected_output+="$exact_output"
-  fi
-
-  if [[ -n "$collected_output" ]]; then
-    provider_output="$collected_output"
-    provider_state="success"
-    return 0
-  fi
 
   provider_state="$fallback_state"
   return 1

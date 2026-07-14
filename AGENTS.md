@@ -6,6 +6,10 @@ view generated from `data/conferences.json`.
 Preserve the conference list as the fixed CORE/ICORE genre master list.
 Automation may update deadline fields and official URLs, but must not add or
 remove conferences unless the user explicitly requests a master-list change.
+Keep `COMPSAC` as an explicit master-list exception: ICORE 2026 assigns it to
+FoR 4601, but the user includes it here because it belongs to the same research
+area as this list. The ranking source is
+`https://portal.core.edu.au/conf-ranks/871/`.
 If only the abstract deadline has passed, keep the announced dates. If the full
 paper deadline has passed, follow the repository's existing reset behavior.
 
@@ -15,6 +19,8 @@ Serper reformulations that still fail, or an independent second index. Use
 `--type scholar` for broad academic discovery, and use
 `./tools/paper-search.sh QUERY` for OpenAlex metadata and arXiv preprints. If a
 target URL is already known, fetch it directly instead of searching for it.
+These search helpers are for local Codex-assisted work and must not be called
+from GitHub Actions.
 
 Treat these as long-lived general-purpose tools. Do not add query-specific or
 temporary fallback behavior merely because one provider returns an empty result.
