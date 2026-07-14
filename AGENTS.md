@@ -6,10 +6,18 @@ view generated from `data/conferences.json`.
 Preserve the conference list as the fixed CORE/ICORE genre master list.
 Automation may update deadline fields and official URLs, but must not add or
 remove conferences unless the user explicitly requests a master-list change.
-Keep `COMPSAC` as an explicit master-list exception: ICORE 2026 assigns it to
-FoR 4601, but the user includes it here because it belongs to the same research
-area as this list. The ranking source is
-`https://portal.core.edu.au/conf-ranks/871/`.
+Keep the following user-selected conferences as explicit master-list exceptions
+when their ICORE primary FoR differs from 4612:
+
+- `COMPSAC` (FoR 4601; profile 871).
+- `SAFECOMP` (FoR 4604; profile 961). Earlier CORE editions classified it under
+  Computer Software (0803).
+- `RTCSA` (profile 1186), `SOSP` (48), `OSDI` (1842), `EuroSys` (525), `DSN`
+  (787), `RTAS` (725), `RTSS` (1701), and `ECRTS` (463), all assigned to FoR
+  4606.
+- `CONCUR` (FoR 4613; profile 973).
+
+Profile numbers refer to `https://portal.core.edu.au/conf-ranks/PROFILE/`.
 If only the abstract deadline has passed, keep the announced dates. If the full
 paper deadline has passed, follow the repository's existing reset behavior.
 
