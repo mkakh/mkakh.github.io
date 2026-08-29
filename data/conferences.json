@@ -130,18 +130,18 @@
     "title": "International Conference on Evaluation and Assessment in Software Engineering",
     "rank": "A",
     "rating": "5.0",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/series/ease"
+    "deadline": "2027-01-15",
+    "fullDeadline": "2027-01-22",
+    "url": "https://conf.researchr.org/track/ease-2027/ease-2027-papers"
   },
   {
     "acronym": "ECOOP",
     "title": "European Conference on Object-Oriented Programming",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://2026.ecoop.org/track/ecoop-2026-technical-papers"
+    "deadline": "2026-11-19",
+    "fullDeadline": "2026-11-19",
+    "url": "https://2027.ecoop.org/track/ecoop-2027-technical-papers"
   },
   {
     "acronym": "ESEM",
@@ -222,16 +222,16 @@
     "rating": "N/A",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://issre.github.io/"
+    "url": "https://conf.researchr.org/home/issre-2027"
   },
   {
     "acronym": "ISSTA",
     "title": "International Symposium on Software Testing and Analysis",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/dates/issta-2026"
+    "deadline": "2027-01-08",
+    "fullDeadline": "2027-01-11",
+    "url": "https://conf.researchr.org/track/issta-2027/issta-2027-research-papers"
   },
   {
     "acronym": "MODELS",
@@ -256,9 +256,9 @@
     "title": "ACM Conference on Object Oriented Programming Systems Languages and Applications",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://2026.splashcon.org/track/oopsla-2026"
+    "deadline": "2026-10-14",
+    "fullDeadline": "2026-10-14",
+    "url": "https://conf.researchr.org/track/splash-2027/splashoopsla2027"
   },
   {
     "acronym": "RE",
@@ -319,9 +319,9 @@
     "title": "IEEE Real-Time and Embedded Technology and Applications Symposium",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://2026.rtas.org/cfp/"
+    "deadline": "2026-11-05",
+    "fullDeadline": "2026-11-05",
+    "url": "https://2027.rtas.org/cfp/"
   },
   {
     "acronym": "RTSS",
@@ -418,9 +418,9 @@
     "title": "International Conference on AI Engineering - Software Engineering for AI",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/series/cain"
+    "deadline": "2026-10-30",
+    "fullDeadline": "2026-10-30",
+    "url": "https://conf.researchr.org/track/cain-2027/cain-2027-call-for-papers"
   },
   {
     "acronym": "ISPASS",
@@ -555,7 +555,7 @@
     "rating": "N/A",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://icpe.spec.org/"
+    "url": "https://icpe2027.spec.org/"
   },
   {
     "acronym": "IFM",
@@ -697,9 +697,9 @@
     "title": "Verification, Model Checking and Abstract Interpretation",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/home/VMCAI-2026"
+    "deadline": "2026-09-16",
+    "fullDeadline": "2026-09-16",
+    "url": "https://conf.researchr.org/home/VMCAI-2027"
   },
   {
     "acronym": "FedCSIS",
@@ -913,9 +913,9 @@
     "title": "IEEE International Conference on Blockchain and Cryptocurrency",
     "rank": "C",
     "rating": "5.0",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://icbc2027.ieee-icbc.org/important-dates"
+    "deadline": "2027-01-14",
+    "fullDeadline": "2027-01-14",
+    "url": "https://icbc2027.ieee-icbc.org/"
   },
   {
     "acronym": "ICFEM",
