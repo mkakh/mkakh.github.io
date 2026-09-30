@@ -35,7 +35,8 @@ jobs:
           HEAD_SHA=$(git rev-parse HEAD)
           test "$(git rev-parse HEAD^1)" = "$BASE_SHA"
           test "$(git rev-parse HEAD^2)" = "$PR_HEAD_SHA"
-          git show "$BASE_SHA:scripts/check_conference_pr.py" | python3 - "$BASE_SHA" "$HEAD_SHA"
+          # Prevent PR-added modules in the working tree from shadowing stdlib imports.
+          git show "$BASE_SHA:scripts/check_conference_pr.py" | python3 -I - "$BASE_SHA" "$HEAD_SHA"
 
       - name: Test conference gate edge cases
         run: python3 -m unittest discover -s tests -p 'test_conference_pr.py'
