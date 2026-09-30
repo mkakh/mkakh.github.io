@@ -1,0 +1,46 @@
+name: Conference data PR
+
+on:
+  pull_request_target:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  conference-data:
+    name: Conference data integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the event PR merge commit without persisted credentials
+        uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # The PR cannot replace the validator: load code from the event's base
+      # commit, and compare that exact base with the checked-out merge tree.
+      - name: Validate data-only update against trusted base
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          HEAD_SHA=$(git rev-parse HEAD)
+          test "$(git rev-parse HEAD^1)" = "$BASE_SHA"
+          test "$(git rev-parse HEAD^2)" = "$PR_HEAD_SHA"
+          git show "$BASE_SHA:scripts/check_conference_pr.py" | python3 - "$BASE_SHA" "$HEAD_SHA"
+
+      - name: Test conference gate edge cases
+        run: python3 -m unittest discover -s tests -p 'test_conference_pr.py'
+
+      - name: Check generated site is reproducible
+        run: |
+          python3 scripts/build_site.py
+          git diff --exit-code -- index.html version.json
