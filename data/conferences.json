@@ -256,8 +256,8 @@
     "title": "ACM Conference on Object Oriented Programming Systems Languages and Applications",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "2026-10-14",
-    "fullDeadline": "2026-10-14",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://conf.researchr.org/track/splash-2027/splashoopsla2027"
   },
   {
@@ -1184,7 +1184,7 @@
     "rank": "C",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "2026-10-15",
+    "fullDeadline": "2026-10-31",
     "url": "https://isorc-conference.org/call-for-papers/"
   },
   {
