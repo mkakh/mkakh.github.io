@@ -130,7 +130,7 @@
     "title": "International Conference on Evaluation and Assessment in Software Engineering",
     "rank": "A",
     "rating": "5.0",
-    "deadline": "2027-01-22",
+    "deadline": "2027-01-15",
     "fullDeadline": "2027-01-22",
     "url": "https://conf.researchr.org/track/ease-2027/ease-2027-papers"
   },
@@ -256,8 +256,8 @@
     "title": "ACM Conference on Object Oriented Programming Systems Languages and Applications",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "2026-10-14",
-    "fullDeadline": "2026-10-14",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://conf.researchr.org/track/splash-2027/splashoopsla2027"
   },
   {
@@ -1184,7 +1184,7 @@
     "rank": "C",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "2026-10-15",
+    "fullDeadline": "2026-10-31",
     "url": "https://isorc-conference.org/call-for-papers/"
   },
   {
