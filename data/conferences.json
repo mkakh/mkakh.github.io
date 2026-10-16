@@ -130,7 +130,7 @@
     "title": "International Conference on Evaluation and Assessment in Software Engineering",
     "rank": "A",
     "rating": "5.0",
-    "deadline": "2027-01-15",
+    "deadline": "2027-01-22",
     "fullDeadline": "2027-01-22",
     "url": "https://conf.researchr.org/track/ease-2027/ease-2027-papers"
   },
@@ -157,8 +157,8 @@
     "title": "European Symposium on Programming",
     "rank": "A",
     "rating": "4.0",
-    "deadline": "2026-10-15",
-    "fullDeadline": "2026-10-15",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://etaps.org/2027/cfp/"
   },
   {
@@ -292,8 +292,8 @@
     "title": "Tools and Algorithms for Construction and Analysis of Systems",
     "rank": "A",
     "rating": "5.0",
-    "deadline": "2026-10-15",
-    "fullDeadline": "2026-10-15",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://etaps.org/2027/cfp/"
   },
   {
@@ -409,8 +409,8 @@
     "title": "Foundations of Software Science and Computational Structures",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "2026-10-15",
-    "fullDeadline": "2026-10-15",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://etaps.org/2027/cfp/"
   },
   {
@@ -1292,7 +1292,7 @@
     "rank": "Unranked",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "2026-10-15",
+    "fullDeadline": "N/A",
     "url": "https://etaps.org/2027/ifs/"
   },
   {
