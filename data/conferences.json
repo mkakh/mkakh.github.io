@@ -256,8 +256,8 @@
     "title": "ACM Conference on Object Oriented Programming Systems Languages and Applications",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "deadline": "2027-04-07",
+    "fullDeadline": "2027-04-07",
     "url": "https://conf.researchr.org/track/splash-2027/splashoopsla2027"
   },
   {
@@ -283,8 +283,8 @@
     "title": "International Symposium on Software Engineering for Adaptive and Self-Managing Systems",
     "rank": "A",
     "rating": "2.0",
-    "deadline": "2026-10-23",
-    "fullDeadline": "2026-10-23",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://conf.researchr.org/track/seams-2027/seams-2027-research-track"
   },
   {
@@ -464,8 +464,8 @@
     "rank": "B",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "2026-10-23",
-    "url": "https://conf.researchr.org/home/chase-2027"
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/track/chase-2027/chase-2027-papers"
   },
   {
     "acronym": "ATVA",
@@ -715,8 +715,8 @@
     "title": "International Conference on Model-Driven Engineering and Software Development",
     "rank": "C",
     "rating": "N/A",
-    "deadline": "2026-10-22",
-    "fullDeadline": "2026-10-22",
+    "deadline": "N/A",
+    "fullDeadline": "2026-10-29",
     "url": "https://modelsward.scitevents.org/ImportantDates.aspx"
   },
   {
@@ -1103,7 +1103,7 @@
     "rank": "C",
     "rating": "4.0",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "fullDeadline": "2027-02-26",
     "url": "https://acisinternational.org/conferences/sera-2027/"
   },
   {
