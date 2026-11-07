@@ -1,11 +1,12 @@
-name: Monthly Codex discovery reminder
+name: Weekly conference URL discovery reminder
 
 on:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "0 0 * * 1"
   workflow_dispatch:
 
 permissions:
+  contents: read
   issues: write
 
 jobs:
@@ -13,7 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create monthly reminder issue
+      - name: Checkout conference data
+        uses: actions/checkout@v4
+
+      - name: Refresh discovery reminder issue
         uses: actions/github-script@v7
         with:
           script: |
@@ -28,11 +32,6 @@ jobs:
                 `"${title}"`,
               ].join(" "),
             });
-
-            if (existing.data.total_count > 0) {
-              core.info("An open monthly reminder issue already exists.");
-              return;
-            }
 
             const desiredLabels = [
               {
@@ -59,8 +58,14 @@ jobs:
               await github.rest.issues.createLabel({ owner, repo, ...label });
             }
 
+            const fs = require("fs");
+            const conferences = JSON.parse(fs.readFileSync("data/conferences.json", "utf8"));
+            const unknown = conferences.filter(c => c.fullDeadline === "N/A");
+            const oldUrl = c => /20(2[0-6])/.test(c.url || "");
+            unknown.sort((a, b) => Number(oldUrl(b)) - Number(oldUrl(a)) || a.acronym.localeCompare(b.acronym));
             const body = [
-              "This is a monthly reminder to run a local Codex-assisted check for newly published CFP / important dates pages that normal GitHub Actions detection may miss.",
+              "Weekly review as of " + new Date().toISOString().slice(0, 10) + ": " + unknown.length + "/" + conferences.length + " full-paper deadlines are N/A.",
+              "Check all unknown dates against the current official research-track CFP. Prior editions and snippets are not evidence.",
               "",
               "Rules:",
               "- Do not add or remove conference entries.",
@@ -75,14 +80,24 @@ jobs:
               "```text",
               "Use the repository skill `conference-url-discovery`.",
               "Review data/conferences.json for existing conferences whose URL is old, generic, or whose fullDeadline is N/A.",
-              "Prioritize A*, A, then B-ranked conferences.",
+              "Review all entries; prioritize A*, A, then B-ranked conferences.",
               "Search for newly published official CFP / important dates / research track pages.",
               "If a better URL or confirmed deadline is found, update data/conferences.json, run scripts/build_site.py and scripts/summarize_changes.py, then prepare a PR.",
               "Do not add or remove conference entries.",
               "```",
               "",
-              "Close this issue after the monthly local Codex check is complete.",
+              "Keep this issue open while unresolved entries remain.",
+              "## N/A entries (old-year URLs first)",
+              ...unknown.map(c => "- [ ] " + c.acronym + " — " + c.url),
             ].join("\n");
+
+            if (existing.data.total_count > 0) {
+              await github.rest.issues.update({
+                owner, repo, issue_number: existing.data.items[0].number, body,
+              });
+              core.info("Refreshed the existing discovery issue.");
+              return;
+            }
 
             await github.rest.issues.create({
               owner,

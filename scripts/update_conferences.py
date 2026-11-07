@@ -102,6 +102,26 @@ UPDATE_MARKER_PATTERN = r"(?:updated|extended|revised|postponed)"
 
 
 def find_researchr_deadline(text, label_pattern):
+    # researchr renders some schedules as label -> date and others as date ->
+    # label. The opposite orientation silently assigns an adjacent event's date.
+    section = re.search("Important Dates", text, flags=re.I)
+    if section:
+        tail = text[section.end():]
+        next_section = re.search("Important Dates", tail, flags=re.I)
+        schedule = tail[:next_section.start() if next_section else 1000]
+        first_date = re.search(DATE_PATTERN, schedule, flags=re.I)
+        first_label = re.search(
+            r"(?:Abstract|Paper|Full Paper|Submission)[ ]+Submission[ ]+Deadline|"
+            r"Abstract[ ]+Submission[ ]+Deadline|Submission[ ]+Deadline",
+            schedule, flags=re.I,
+        )
+        if first_label and first_date and first_label.start() < first_date.start():
+            values = re.findall(
+                rf"{label_pattern}[ ]*(?:\([^)]*\))?[ ]*:?[ ]*({DATE_PATTERN})",
+                schedule, flags=re.I,
+            )
+            if values:
+                return parse_human_date(values[-1])
     date_before = re.findall(
         rf"({DATE_PATTERN})\s+{UPDATE_MARKER_PATTERN}\s+{label_pattern}",
         text,
@@ -158,7 +178,30 @@ def extract_compsac_deadline(url):
     return None
 
 
-def update_known_page_deadlines(conferences):
+def extract_eics_deadline(url, today):
+    # Select the next PACM full-paper round, not the notification/rebuttal dates.
+    year_match = re.fullmatch(
+        r"https://eics[.]acm[.]org/(20[0-9]{2})/contributions/full-papers[.]md",
+        url,
+    )
+    if not year_match:
+        return None
+    text = fetch_text(url)
+    if not re.search(r"EICS PACM[ ]+" + year_match.group(1), text, flags=re.I):
+        return None
+    candidates = [
+        parsed
+        for value in re.findall(r"Paper submissions:[ ]*(" + DATE_PATTERN + r")", text, flags=re.I)
+        if (parsed := parse_human_date(value))
+        and int(parsed[:4]) in (int(year_match.group(1)) - 1, int(year_match.group(1)))
+        and parsed >= today.isoformat()
+    ]
+    return min(candidates) if candidates else None
+
+
+def update_known_page_deadlines(conferences, today=None):
+    if today is None:
+        today = date.today()
     updated = deepcopy(conferences)
     for conf in updated:
         url = conf.get("url", "")
@@ -168,6 +211,9 @@ def update_known_page_deadlines(conferences):
             elif conf.get("acronym") == "COMPSAC":
                 full_deadline = extract_compsac_deadline(url)
                 deadlines = (full_deadline, full_deadline) if full_deadline else None
+            elif conf.get("acronym") == "EICS":
+                full_deadline = extract_eics_deadline(url, today)
+                deadlines = (None, full_deadline) if full_deadline else None
             else:
                 continue
         except (OSError, TimeoutError, URLError, ValueError):
@@ -278,7 +324,7 @@ def build_summary(original, updated, today):
 def main():
     today = date.fromisoformat(os.environ.get("TODAY", date.today().isoformat()))
     original = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    updated = update_known_page_deadlines(original)
+    updated = update_known_page_deadlines(original, today)
     updated = reset_expired_full_deadlines(updated, today)
 
     DATA_PATH.write_text(

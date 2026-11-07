@@ -34,6 +34,9 @@ jobs:
       - name: Build site
         run: python scripts/build_site.py
 
+      - name: Validate generated site data
+        run: python -m unittest discover -s tests -p 'test_site_data.py'
+
       - name: Summarize changes
         run: python scripts/summarize_changes.py
 
