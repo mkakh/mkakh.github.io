@@ -549,15 +549,6 @@
     "url": "https://icpe2027.spec.org/important-dates/"
   },
   {
-    "acronym": "ICSR",
-    "title": "International Conference on Software Reuse",
-    "rank": "B",
-    "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/home/variability-2026"
-  },
-  {
     "acronym": "ICSSP",
     "title": "International Conference on Software and System Processes",
     "rank": "B",
@@ -637,15 +628,6 @@
     "deadline": "N/A",
     "fullDeadline": "N/A",
     "url": "https://conf.researchr.org/home/sle-2026"
-  },
-  {
-    "acronym": "SPLC",
-    "title": "Software Product Lines Conference",
-    "rank": "B",
-    "rating": "5.0",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/dates/variability-2026"
   },
   {
     "acronym": "SSBSE",
@@ -1276,6 +1258,15 @@
     "deadline": "N/A",
     "fullDeadline": "N/A",
     "url": "https://www.cs.kent.ac.uk/EDCC2026/dates"
+  },
+  {
+    "acronym": "VARIABILITY",
+    "title": "International Conference on Software and Systems Reuse, Product Lines, and Configuration",
+    "rank": "Unranked",
+    "rating": "N/A",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
+    "url": "https://conf.researchr.org/home/variability-2026"
   },
   {
     "acronym": "iFS",
