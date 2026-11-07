@@ -12,7 +12,9 @@ class PublishedDataTests(unittest.TestCase):
     def test_master_deadlines_and_generated_site(self):
         entries = json.loads((ROOT / 'data/conferences.json').read_text())
         acronyms = [c['acronym'] for c in entries]
-        self.assertEqual(len(acronyms), 147)
+        self.assertEqual(len(acronyms), 146)
+        self.assertNotIn('IFM', acronyms)
+        self.assertIn('iFS', acronyms)
         self.assertEqual(len(acronyms), len(set(acronyms)))
         today = date.today()
         for c in entries:
