@@ -6,6 +6,8 @@ view generated from `data/conferences.json`.
 Preserve the conference list as the fixed CORE/ICORE genre master list.
 Automation may update deadline fields and official URLs, but must not add or
 remove conferences unless the user explicitly requests a master-list change.
+IFM (iFM) was explicitly removed after the FASE + iFM merger formed iFS in
+2027; keep iFS and do not reintroduce IFM as a separate current conference.
 Keep the following user-selected conferences as explicit master-list exceptions
 when their ICORE primary FoR differs from 4612:
 
