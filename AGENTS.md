@@ -8,6 +8,10 @@ Automation may update deadline fields and official URLs, but must not add or
 remove conferences unless the user explicitly requests a master-list change.
 IFM (iFM) was explicitly removed after the FASE + iFM merger formed iFS in
 2027; keep iFS and do not reintroduce IFM as a separate current conference.
+SPLC and ICSR were explicitly replaced with VARIABILITY, their successor after
+the SPLC + ICSR + VaMoS merger (https://conf.researchr.org/home/variability-2026).
+VaMoS was not a master-list entry. Do not reintroduce SPLC or ICSR as
+separate current conferences; keep VARIABILITY unranked until ICORE assigns it.
 Keep the following user-selected conferences as explicit master-list exceptions
 when their ICORE primary FoR differs from 4612:
 
