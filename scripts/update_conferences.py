@@ -110,6 +110,14 @@ def find_researchr_deadline(text, label_pattern):
     if date_before:
         return parse_human_date(date_before[-1])
 
+    # researchr's Important Dates list puts the date before its label. Reading
+    # the date after the label instead picks the next event's deadline.
+    date_before = re.findall(
+        rf"({DATE_PATTERN})\s+{label_pattern}", text, flags=re.I
+    )
+    if date_before:
+        return parse_human_date(date_before[-1])
+
     label_before = re.findall(
         rf"{label_pattern}\s*(?:\([^)]*\))?\s*:?\s*({DATE_PATTERN})",
         text,
@@ -128,20 +136,40 @@ def extract_researchr_deadlines(url):
     )
     full_deadline = find_researchr_deadline(
         text,
-        r"(?:Full\s+Paper\s+Submission|Paper\s+Submission\s+Deadline)",
+        r"(?:Full\s+Paper\s+Submission|Paper\s+Submission\s+Deadline|Submission\s+deadline)",
     )
     if abstract_deadline or full_deadline:
         return abstract_deadline, full_deadline
     return None
 
 
+def extract_compsac_deadline(url):
+    # A year-specific official CFP is required: the generic landing page may
+    # point to a prior edition and must not resurrect an expired deadline.
+    year_match = re.search(r"^https://ieeecompsac\.computer\.org/(20\d{2})/", url)
+    if not year_match:
+        return None
+    text = fetch_text(url)
+    matches = re.findall(r"Full papers due\s+(" + DATE_PATTERN + r")", text, flags=re.I)
+    for value in matches:
+        parsed = parse_human_date(value)
+        if parsed and parsed.startswith(year_match.group(1) + "-"):
+            return parsed
+    return None
+
+
 def update_known_page_deadlines(conferences):
     updated = deepcopy(conferences)
     for conf in updated:
-        if "conf.researchr.org" not in conf.get("url", ""):
-            continue
+        url = conf.get("url", "")
         try:
-            deadlines = extract_researchr_deadlines(conf["url"])
+            if "conf.researchr.org" in url:
+                deadlines = extract_researchr_deadlines(url)
+            elif conf.get("acronym") == "COMPSAC":
+                full_deadline = extract_compsac_deadline(url)
+                deadlines = (full_deadline, full_deadline) if full_deadline else None
+            else:
+                continue
         except (OSError, TimeoutError, URLError, ValueError):
             continue
         if not deadlines:

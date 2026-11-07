@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Test deadline parsers
+        run: python -m unittest discover -s tests -p 'test_update_conferences.py'
+
       - name: Update conference data
         run: python scripts/update_conferences.py
 
