@@ -23,8 +23,8 @@
     "rank": "A*",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "http://conferences.i-cav.org/2026/cfp/"
+    "fullDeadline": "2027-01-20",
+    "url": "https://conferences.i-cav.org/2027/cfp/"
   },
   {
     "acronym": "FSE",
@@ -49,9 +49,9 @@
     "title": "ACM International Symposium on Computer Architecture",
     "rank": "A*",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://iscaconf.org/isca2026/submit/callforpapers.php"
+    "deadline": "2026-11-09",
+    "fullDeadline": "2026-11-16",
+    "url": "https://iscaconf.org/isca2027/submit/callforpapers.php"
   },
   {
     "acronym": "PLDI",
@@ -167,8 +167,8 @@
     "rank": "A",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://icfp26.sigplan.org/dates"
+    "fullDeadline": "2027-02-25",
+    "url": "https://icfp27.sigplan.org/track/icfp-2027-icfp-papers"
   },
   {
     "acronym": "ICPC",
@@ -194,8 +194,8 @@
     "rank": "A",
     "rating": "5.0",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/track/icsme-2026/icsme-2026-papers"
+    "fullDeadline": "2027-03-05",
+    "url": "https://conf.researchr.org/track/icsme-2027/icsme-2027-papers"
   },
   {
     "acronym": "ICST",
@@ -220,9 +220,9 @@
     "title": "International Symposium on Software Reliability Engineering",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/home/issre-2027"
+    "deadline": "2027-04-09",
+    "fullDeadline": "2027-04-16",
+    "url": "https://conf.researchr.org/track/issre-2027/issre-2027-papers"
   },
   {
     "acronym": "ISSTA",
@@ -265,9 +265,9 @@
     "title": "IEEE International Requirements Engineering Conference",
     "rank": "A",
     "rating": "5.0",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/track/RE-2026/RE-2026-Research-Papers"
+    "deadline": "2027-02-22",
+    "fullDeadline": "2027-03-01",
+    "url": "https://conf.researchr.org/track/RE-2027/RE-2027-papers"
   },
   {
     "acronym": "SANER",
@@ -355,9 +355,9 @@
     "title": "International Conference on Computer Safety, Reliability and Security",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://safecomp2026.webs.upv.es/call-for-papers/"
+    "deadline": "2027-02-22",
+    "fullDeadline": "2027-03-01",
+    "url": "https://easychair.org/cfp/safecomp2027"
   },
   {
     "acronym": "RTCSA",
@@ -383,7 +383,7 @@
     "rank": "B",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "fullDeadline": "2027-02-26",
     "url": "https://www.ecrts.org/call-for-papers/"
   },
   {
@@ -391,9 +391,9 @@
     "title": "European Conference on Software Architecture",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/dates/ecsa-2026"
+    "deadline": "2027-03-12",
+    "fullDeadline": "2027-03-19",
+    "url": "https://conf.researchr.org/track/ecsa-2027/ecsa-2027-research-track"
   },
   {
     "acronym": "ICLP",
@@ -427,9 +427,9 @@
     "title": "IEEE International Symposium on Performance Analysis of Systems and Software",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://ispass.org/ispass2026/submission.php"
+    "deadline": "2026-12-11",
+    "fullDeadline": "2026-12-18",
+    "url": "https://ispass.org/2027/cfp/"
   },
   {
     "acronym": "FM",
@@ -445,9 +445,9 @@
     "title": "Conference on Agile Software Development",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/series/xp"
+    "deadline": "2027-01-24",
+    "fullDeadline": "2027-01-31",
+    "url": "https://conf.researchr.org/dates/xp-2027"
   },
   {
     "acronym": "CPP",
@@ -544,9 +544,9 @@
     "title": "ACM/SPEC International Conference on Performance Engineering",
     "rank": "B",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://icpe2027.spec.org/"
+    "deadline": "2026-11-09",
+    "fullDeadline": "2026-11-16",
+    "url": "https://icpe2027.spec.org/important-dates/"
   },
   {
     "acronym": "IFM",
@@ -573,7 +573,7 @@
     "rating": "5.0",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://conference.eurospi.net/index.php/en/submission"
+    "url": "https://isspa-process.org/"
   },
   {
     "acronym": "NetSoft",
@@ -618,7 +618,7 @@
     "rating": "4.8",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/home/splash-issta-2026/sas-2026"
+    "url": "https://2027.splashcon.org/home/sas-2027"
   },
   {
     "acronym": "SEAA",
@@ -672,7 +672,7 @@
     "rating": "N/A",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://conf.researchr.org/home/TechDebt-2026"
+    "url": "https://conf.researchr.org/track/TechDebt-2027/TechDebt-2027-main"
   },
   {
     "acronym": "VISSOFT",
@@ -725,7 +725,7 @@
     "rank": "C",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "fullDeadline": "2027-02-16",
     "url": "https://icsoft.scitevents.org/ImportantDates.aspx"
   },
   {
@@ -751,9 +751,9 @@
     "title": "International Conference Abstract State Machines, Alloy, B, TLA, VDM, and Z",
     "rank": "C",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://abz-conf.org/site/2026/importantdates"
+    "deadline": "2027-02-08",
+    "fullDeadline": "2027-02-15",
+    "url": "https://abz-conf.org/site/2027/importantdates/"
   },
   {
     "acronym": "APSEC",
@@ -780,7 +780,7 @@
     "rating": "N/A",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "https://cicm-conference.org/2026/cicm.php"
+    "url": "https://cicm-conference.org/2027/cicm.php"
   },
   {
     "acronym": "CLEI",
@@ -832,8 +832,8 @@
     "title": "Exploring Modelling Methods in Systems Analysis and Design",
     "rank": "C",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "deadline": "2027-02-19",
+    "fullDeadline": "2027-02-26",
     "url": "https://www.emmsad.org/submission/important-dates"
   },
   {
@@ -877,9 +877,9 @@
     "title": "IFIP Joint International Conference on Formal Description Techniques and Protocol Specification, Testing, And Verification",
     "rank": "C",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "http://www.discotec.org/2026/forte"
+    "deadline": "2027-01-28",
+    "fullDeadline": "2027-02-04",
+    "url": "http://www.discotec.org/2027/forte"
   },
   {
     "acronym": "FTfJP",
@@ -932,8 +932,8 @@
     "rank": "C",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://www.iaria.org/conferences2026/CfPICSEA26.html"
+    "fullDeadline": "2027-06-07",
+    "url": "https://www.iaria.org/conferences2027/ICSEA27.html"
   },
   {
     "acronym": "ICTSS",
@@ -1077,7 +1077,7 @@
     "rating": "N/A",
     "deadline": "N/A",
     "fullDeadline": "N/A",
-    "url": "http://prdc.dependability.org/"
+    "url": "https://prdc-symposium.org/"
   },
   {
     "acronym": "RSP",
@@ -1121,8 +1121,8 @@
     "rank": "C",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://acisinternational.org/conferences/snpd-2026-i/"
+    "fullDeadline": "2027-07-01",
+    "url": "https://acisinternational.org/conferences/snpd-2027/"
   },
   {
     "acronym": "SoMeT",
@@ -1202,8 +1202,8 @@
     "rank": "Journal Published",
     "rating": "5.0",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://eics.acm.org/2026/important-dates.html"
+    "fullDeadline": "2026-11-12",
+    "url": "https://eics.acm.org/2027/contributions/full-papers.md"
   },
   {
     "acronym": "PERFORMANCE",
@@ -1256,7 +1256,7 @@
     "rank": "National: Germany",
     "rating": "5.0",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
+    "fullDeadline": "2027-02-08",
     "url": "https://www.europlop.net/call-for-papers/"
   },
   {
@@ -1300,8 +1300,8 @@
     "title": "IEEE/ACM International Conference on Formal Methods in Software Engineering",
     "rank": "Unranked",
     "rating": "N/A",
-    "deadline": "2026-10-30",
-    "fullDeadline": "2026-11-06",
+    "deadline": "N/A",
+    "fullDeadline": "N/A",
     "url": "https://www.formalise.org/"
   },
   {

@@ -4,6 +4,7 @@ from unittest.mock import patch
 
 from scripts.update_conferences import (
     extract_compsac_deadline,
+    extract_eics_deadline,
     extract_researchr_deadlines,
     reset_expired_full_deadlines,
     update_known_page_deadlines,
@@ -21,6 +22,16 @@ class OfficialDeadlineTests(unittest.TestCase):
             self.assertEqual(
                 extract_researchr_deadlines('https://conf.researchr.org/home/nfm-2027'),
                 ('2027-01-04', '2027-01-11'),
+            )
+
+    def test_label_before_date_does_not_take_previous_abstract_date(self):
+        text = ('Important Dates (AoE) Abstract Submission Deadline : April 09, 2027 '
+                'Paper Submission Deadline : April 16, 2027 '
+                'Author Rebuttal Period : June 7, 2027')
+        with patch('scripts.update_conferences.fetch_text', return_value=text):
+            self.assertEqual(
+                extract_researchr_deadlines('https://conf.researchr.org/track/issre-2027/issre-2027-papers'),
+                ('2027-04-09', '2027-04-16'),
             )
 
     def test_researchr_generic_submission_label(self):
@@ -54,6 +65,23 @@ class OfficialDeadlineTests(unittest.TestCase):
             self.assertIsNone(extract_compsac_deadline(
                 'https://ieeecompsac.computer.org/2028/information-for-authors/'))
             self.assertEqual(fetch.call_count, 2)
+
+    def test_eics_selects_next_full_paper_round_without_losing_last_round(self):
+        url = 'https://eics.acm.org/2027/contributions/full-papers.md'
+        text = ('### EICS PACM 2027, Round 1 - Paper submissions: Jul 23, 2026 '
+                '- Notification of reviews: Sep 23, 2026 '
+                '### Round 2 - Paper submissions: Nov 12, 2026 '
+                '### Round 3 - Paper submissions: Feb 19, 2027 '
+                '- Rebuttal deadline: Apr 2, 2027')
+        with patch('scripts.update_conferences.fetch_text', return_value=text):
+            self.assertEqual(extract_eics_deadline(url, date(2026, 11, 7)), '2026-11-12')
+            self.assertEqual(extract_eics_deadline(url, date(2026, 11, 13)), '2027-02-19')
+            self.assertIsNone(extract_eics_deadline(url, date(2027, 2, 20)))
+            self.assertIsNone(extract_eics_deadline('https://eics.acm.org/2028/contributions/full-papers.md', date(2026, 11, 7)))
+            conf = [dict(acronym='EICS', url=url, deadline='N/A', fullDeadline='2026-11-12')]
+            after = update_known_page_deadlines(conf, date(2026, 11, 13))
+            self.assertEqual(after[0]['fullDeadline'], '2027-02-19')
+            self.assertEqual(reset_expired_full_deadlines(after, date(2026, 11, 13))[0]['fullDeadline'], '2027-02-19')
 
     def test_refresh_and_expiry(self):
         conferences = [
