@@ -1,14 +1,24 @@
 import hashlib
 import json
 import unittest
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+AOE = timezone(-timedelta(hours=12))
+
+
+def current_aoe_date(now=None):
+    """Keep a dated deadline visible until its Anywhere-on-Earth day ends."""
+    return (now or datetime.now(timezone.utc)).astimezone(AOE).date()
 
 
 class PublishedDataTests(unittest.TestCase):
+    def test_aoe_deadline_boundary(self):
+        self.assertEqual(current_aoe_date(datetime(2026, 11, 17, 11, 59, tzinfo=timezone.utc)), date(2026, 11, 16))
+        self.assertEqual(current_aoe_date(datetime(2026, 11, 17, 12, 0, tzinfo=timezone.utc)), date(2026, 11, 17))
+
     def test_master_deadlines_and_generated_site(self):
         entries = json.loads((ROOT / 'data/conferences.json').read_text())
         acronyms = [c['acronym'] for c in entries]
@@ -21,7 +31,8 @@ class PublishedDataTests(unittest.TestCase):
         self.assertNotIn('IFM', acronyms)
         self.assertIn('iFS', acronyms)
         self.assertEqual(len(acronyms), len(set(acronyms)))
-        today = date.today()
+        # Date-only site deadlines are valid through the AoE day, even on the next JST date.
+        today = current_aoe_date()
         for c in entries:
             with self.subTest(acronym=c['acronym']):
                 abstract = None if c['deadline'] == 'N/A' else date.fromisoformat(c['deadline'])
