@@ -563,8 +563,8 @@
     "rank": "B",
     "rating": "N/A",
     "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://netsoft2026.ieee-netsoft.org/"
+    "fullDeadline": "2027-01-15",
+    "url": "https://www.comsoc.org/conferences-events/ieee-international-conference-network-softwarization-2027"
   },
   {
     "acronym": "PROFES",
@@ -1210,9 +1210,9 @@
     "title": "International Symposium on Theoretical Aspects of Software Engineering",
     "rank": "National: China",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://tase2026.github.io/"
+    "deadline": "2027-02-19",
+    "fullDeadline": "2027-02-26",
+    "url": "https://easychair.org/cfp/TASE2027"
   },
   {
     "acronym": "RTNS",
@@ -1300,8 +1300,8 @@
     "title": "International Symposium on Model Checking Software",
     "rank": "Unranked",
     "rating": "N/A",
-    "deadline": "N/A",
-    "fullDeadline": "N/A",
-    "url": "https://spinroot.com/spin/symposia/"
+    "deadline": "2027-01-21",
+    "fullDeadline": "2027-01-28",
+    "url": "https://spin-web.github.io/SPIN2027/"
   }
 ]
