@@ -139,8 +139,8 @@
     "title": "European Conference on Object-Oriented Programming",
     "rank": "A",
     "rating": "N/A",
-    "deadline": "2026-11-19",
-    "fullDeadline": "2026-11-19",
+    "deadline": "N/A",
+    "fullDeadline": "2027-02-11",
     "url": "https://2027.ecoop.org/track/ecoop-2027-technical-papers"
   },
   {
@@ -877,9 +877,9 @@
     "title": "IEEE International Conference on Blockchain and Cryptocurrency",
     "rank": "C",
     "rating": "5.0",
-    "deadline": "2027-01-14",
-    "fullDeadline": "2027-01-14",
-    "url": "https://icbc2027.ieee-icbc.org/"
+    "deadline": "N/A",
+    "fullDeadline": "2026-12-03",
+    "url": "https://icbc2027.ieee-icbc.org/authors/call-papers"
   },
   {
     "acronym": "ICFEM",
